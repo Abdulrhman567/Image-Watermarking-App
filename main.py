@@ -67,11 +67,13 @@ class ImageWatermarking:
         Displays the 'Text' window to enter some text you want to display on the main image and choose a font type and
         a font size to the text.
         """
+        # The Text Window
         text_window = Tk()
         text_window.title("Add Text")
         text_window.config(bg="#fff")
         text_window.config(padx=40, pady=30)
 
+        # Labels, buttons, entries, font scale and font type list box for the text window
         text_label = Label(text_window, text="Enter Text:", bg="#fff")
         text_label.pack(anchor=NW)
 
@@ -89,6 +91,8 @@ class ImageWatermarking:
         font_type_label = Label(text_window, text="Font Type:", bg="#fff")
         font_type_label.pack(anchor=NW)
 
+        # These fonts need to be installed on your device first if they are already installed try to change
+        # the path of the font inside the 'insert' method
         self.font_type_listbox = Listbox(text_window, width=40, height=4, selectmode=SINGLE)
         self.font_type_listbox.pack(anchor=NW)
         self.font_type_listbox.insert(1, "Arabtype.ttf")
@@ -123,6 +127,7 @@ class ImageWatermarking:
         Display the 'Adjust Logo' window to choose where the entered logo should be placed on the main image using
         the x-axis and the y-axis.
         """
+        # The Logo Window
         logo_window = Tk()
         logo_window.title("Adjust Logo")
         logo_window.config(padx=25, pady=25, bg="#fff")
@@ -169,6 +174,7 @@ class ImageWatermarking:
         """
         Saves the new image on the system files and clears the canvas.
         """
+        self.resized_img.save("new_image.jpg")
         self.canvas.delete("all")
 
 
