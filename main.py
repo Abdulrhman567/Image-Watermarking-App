@@ -27,7 +27,7 @@ class ImageWatermarking:
         self.add_text_button = Button(self.main_window, text="Add Text", width=17,
                                       bg="#4D96FF", fg="#fff",
                                       font=("bold", 12), highlightthickness=0,
-                                      bd=0, command=self.add_text)
+                                      bd=0, state=DISABLED, command=self.add_text)
         self.add_text_button.grid(row=2, column=0)
 
         self.add_logo_button = Button(self.main_window, text="Add Logo", width=17,
